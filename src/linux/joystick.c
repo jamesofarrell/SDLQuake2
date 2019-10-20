@@ -162,6 +162,13 @@ void Joy_AdvancedUpdate_f () {
     axis_map[3] = atoi(joy_advaxisr->string);
     axis_map[4] = atoi(joy_advaxisu->string);
     axis_map[5] = atoi(joy_advaxisv->string);
+    /*Each joy_advaxis variable can be set to the following controls:
+	0 = Axis not used
+	1 = Axis is for forward and backward movement
+	2 = Axis is for looking up and down (pitch)
+	3 = Axis is for side to side movement
+	4 = Axis is for turning left and right (yaw)
+	5 = Axis is for up and down movement*/
   }
 }
 
@@ -224,11 +231,11 @@ void RW_IN_JoystickMove(usercmd_t *cmd, qboolean mlooking,
   if (joy_avail) {
     // Start
     float speed, aspeed;
-    float jforward = 	((float)axis_vals[2])/32768.0;
-    float jside = 	((float)axis_vals[2])/32768.0;
-    float jup = 	((float)axis_vals[2])/32768.0;
-    float jturn = 	((float)axis_vals[0])/32768.0;
-    float jlook = 	((float)axis_vals[1])/32768.0;
+    float jforward = 	((float)axis_vals[1])/32768.0;
+    float jside = 	((float)axis_vals[0])/32768.0;
+    float jup = 	((float)axis_vals[5])/32768.0;
+    float jturn = 	((float)axis_vals[2])/32768.0;
+    float jlook = 	((float)axis_vals[3])/32768.0;
 
     if (((*in_state->in_speed_state) & 1) || cl_run->value!=0.0)
       speed = 2;

@@ -158,11 +158,15 @@ keyname_t keynames[] =
 
 keyname_t keynames_clean[] =
 {
-	{"L SHOULDER", K_TAB},
+	{"L1", K_TAB},
+	{"L2", K_PGUP},
+	{"L3", K_KP_SLASH},
 	{"START", K_ENTER},
 	{"SELECT", K_ESCAPE},
 	{"X", K_SPACE},
-	{"R SHOULDER", K_BACKSPACE},
+	{"R1", K_BACKSPACE},
+	{"R2", K_PGDN},
+	{"R3", K_KP_DEL},
 	{"UP", K_UPARROW},
 	{"DOWN", K_DOWNARROW},
 	{"LEFT", K_LEFTARROW},
